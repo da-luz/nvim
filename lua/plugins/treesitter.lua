@@ -12,6 +12,7 @@ return {
 			"php",
 
 			-- pseudo
+            "json",
 			"sql",
 			"query",
 			"html",
