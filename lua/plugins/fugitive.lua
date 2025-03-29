@@ -1,28 +1,28 @@
+-- Git integration
+
 return {
     "tpope/vim-fugitive",
     config = function()
-        -- Declares git status function keymap
+
         vim.keymap.set("n", "<leader>gs",  function()
             vim.cmd('Git status')
-        end)
+        end, { desc = "Runs `git status` command" })
 
-        -- Declares git stash function keymap
         vim.keymap.set("n", "<leader>gt", function()
             vim.cmd('Git stash')
-        end)
+        end, { desc = "Runs `git stash` command" })
 
-        -- Declares git stash apply function keymap
         vim.keymap.set("n", "<leader>ga", function()
             vim.cmd('Git stash apply')
-        end)
+        end, { desc = "Applies git stashed changes" })
 
-        -- Toggles git blame window
         vim.keymap.set("n", "<leader>gb", function()
             if vim.bo.filetype == 'fugitiveblame' then
                 vim.cmd('close')
             else
                 vim.cmd('Git blame')
             end
-        end)
+        end, { desc = "Toggle git blame window" })
     end
 }
+

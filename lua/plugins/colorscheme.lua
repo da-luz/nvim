@@ -1,13 +1,32 @@
+-- Colorscheme configuration
+
 return {
-    "navarasu/onedark.nvim",
+    'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-        require('onedark').setup {
-            style = 'warm',
-            transparent = true,
-            ending_tildes = true,
-        }
-        require('onedark').load()
-    end,
+        require('nordic').setup({
+            bold_keywords = true,
+
+            -- Setting background transparency
+            transparent = {
+                bg = true,
+            },
+
+            -- Telescope themes
+            telescope = {
+                -- Available styles: `classic`, `flat`.
+                style = 'classic',
+            },
+
+            cursorline = {
+
+                -- Setting for more constrast when selecting
+                -- Available styles: 'dark', 'light'.
+                theme = 'light',
+            },
+        })
+        require('nordic').load()
+    end
 }
+

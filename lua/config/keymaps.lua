@@ -1,49 +1,30 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Functionalities
+vim.keymap.set("n", "Q", "<nop>", { desc = "Just dont play macros, dont even know what they are" })
+vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Maps <Esc> in Insert mode" })
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Opens explorer"})
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
+-- Code formatting
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP Format" })
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Moves selected code up" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Moves selected code down" })
 
--- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("v", "<", "<gv", { desc = "Retreat indentation" })
+vim.keymap.set("v", ">", ">gv", { desc = "Create indentation" })
 
--- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- Copying and pasting
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Delete selected and paste previous code in buffer" })
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Copy selected to clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to clipboard" })
 
-vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
-
--- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<Esc>")
-
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- Find and replace
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Find and replace" })
 
 vim.keymap.set("n", "<leader><leader>", function()
     local save_view = vim.fn.winsaveview()
     vim.cmd('%s/\\s\\+$//g')
     vim.fn.winrestview(save_view)
-end)
+end, { desc = "Erase all trailing whitespaces from files" })
+
