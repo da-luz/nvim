@@ -15,16 +15,31 @@ return {
                 "javascript",
                 "typescript",
                 "php",
+                "vim",
 
-                -- pseudo
+                -- web files
                 "json",
-                "sql",
-                "query",
+                "jsonc",
                 "html",
                 "css",
+                "htmldjango",
 
-                -- additionals
-                "vim",
+                -- data related
+                "sql",
+                "query",
+                "csv",
+
+                -- some... files...
+                "dockerfile",
+                "latex",
+                "markdown",
+                "markdown_inline",
+                "yaml",
+
+                -- docs
+                "javadoc",
+                "jsdoc",
+                "luadoc",
                 "vimdoc",
             },
             sync_install = false,
