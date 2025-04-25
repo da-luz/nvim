@@ -15,7 +15,7 @@ return {
 
         local mason_lspconfig = require('mason-lspconfig')
         mason_lspconfig.setup({
-            ensure_installed = { "pyright", "jdtls" }
+            ensure_installed = { "pyright", "jdtls", "html", "cssls", "ts_ls" }
         })
 
         -- LSPs
@@ -25,6 +25,16 @@ return {
         require("lspconfig").jdtls.setup({
             capabilities = capabilities,
         })
+        require("lspconfig").html.setup({
+            capabilities = capabilities,
+        })
+        require("lspconfig").cssls.setup({
+            capabilities = capabilities,
+        })
+        require("lspconfig").ts_ls.setup({
+            capabilities = capabilities,
+        })
+
     end
 }
 
