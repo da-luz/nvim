@@ -27,3 +27,5 @@ vim.opt.swapfile = false
 
 vim.diagnostic.config({ virtual_text = true })
 
+vim.g.netrw_keepdir = 0
+
