@@ -19,6 +19,11 @@ return {
                 lualine_y = {},
                 lualine_z = {'location'}
             },
+            inactive_sections = {
+                lualine_b = {'branch', 'diff', 'diagnostics'},
+                lualine_c = { { 'filename', path=1 } }, -- Shows file path in current folder
+                lualine_x = {'encoding', 'filetype'},
+            },
         })
     end
 }

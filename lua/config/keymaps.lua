@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 
 -- Functionalities
-vim.keymap.set("n", "Q", "<nop>", { desc = "Just dont play macros, dont even know what they are" })
+vim.keymap.set("n", "q", "<C-W>w", { desc = "Switch windows", remap = true })
+vim.keymap.set("n", "sw", function () vim.cmd("split") end, { desc = "Split window", remap = true })
 vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Maps <Esc> in Insert mode" })
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Opens explorer"})
 
