@@ -29,3 +29,10 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.fn.winrestview(save_view)
 end, { desc = "Erase all trailing whitespaces from files" })
 
+vim.keymap.set("n", "<leader>ts", function ()
+    local tabsize = tonumber(vim.fn.input("Set Tab Size = "))
+    vim.opt.tabstop = tabsize
+    vim.opt.softtabstop = tabsize
+    vim.opt.shiftwidth = tabsize
+end)
+
