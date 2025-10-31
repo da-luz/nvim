@@ -11,7 +11,7 @@ return {
 
 		vim.keymap.set('n', '<leader>ps',
 		function()
-			builtin.grep_string({search = vim.fn.input("Grep > ")})
+			builtin.live_grep()
 		end, { desc = 'Telescope grep files' })
 
 	end
