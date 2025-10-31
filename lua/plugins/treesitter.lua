@@ -20,7 +20,7 @@ return {
 
                 -- web files
                 "json",
-                "jsonc",
+                "json5",
                 "html",
                 "css",
                 "htmldjango",
