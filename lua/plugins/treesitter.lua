@@ -24,6 +24,7 @@ return {
                 "html",
                 "css",
                 "htmldjango",
+                "blade",
 
                 -- data related
                 "sql",
