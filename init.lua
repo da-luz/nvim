@@ -1,3 +1,6 @@
+vim.opt.runtimepath:prepend(vim.fn.stdpath("data") .. "/lazy/nvim-treesitter")
+
+require("config.filetypes")
 require("config.lazy")
 require("config.keymaps")
 require("config.settings")

@@ -7,6 +7,7 @@ return {
         local configs = require("nvim-treesitter.config")
 
         configs.setup({
+            install_dir = vim.fn.stdpath("data") .. "/lazy/nvim-treesitter",
             ensure_installed = {
                 -- languages
                 "java",
